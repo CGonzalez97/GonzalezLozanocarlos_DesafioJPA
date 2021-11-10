@@ -32,6 +32,14 @@ public class SpringDesafiojpaApplication implements CommandLineRunner {
 		clienteServicio.addCliente(cliente2);
 		clienteServicio.addCliente(cliente3);
 		
+		String nombre = "María";
+		String apellidos = "Pérez";
+		System.out.println("Buscar por nombre "+nombre+" y apellidos "+apellidos+":");
+		List<Cliente> filtroNombre = clienteServicio.findByCompleteName(nombre, apellidos);
+		for (Cliente cliente : filtroNombre) {
+			System.out.println(cliente);
+		}
+		
 		System.out.println("Buscar todos los clientes:");
 		List<Cliente> listadoClientes = clienteServicio.getClientes();
 		System.out.println(listadoClientes);

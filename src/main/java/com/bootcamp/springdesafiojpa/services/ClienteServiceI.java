@@ -19,6 +19,6 @@ public interface ClienteServiceI {
 	
 	Optional<Cliente> addCliente(Cliente cliente);
 	
-	
+	List<Cliente> findByCompleteName(String nombre, String apellidos);
 
 }

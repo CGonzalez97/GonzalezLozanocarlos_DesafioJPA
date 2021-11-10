@@ -50,4 +50,11 @@ public class ClienteServiceImpl implements ClienteServiceI{
 		return Optional.of(repositorio.save(cliente));
 	}
 
+	@Override
+	public List<Cliente> findByCompleteName(String nombre, String apellidos) {
+		return repositorio.findByNombreAndApellidos(nombre, apellidos);
+	}
+	
+	
+
 }
