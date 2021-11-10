@@ -1,5 +1,6 @@
 package com.bootcamp.springdesafiojpa.services;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -53,6 +54,11 @@ public class ClienteServiceImpl implements ClienteServiceI{
 	@Override
 	public List<Cliente> findByCompleteName(String nombre, String apellidos) {
 		return repositorio.findByNombreAndApellidos(nombre, apellidos);
+	}
+
+	@Override
+	public List<Cliente> findByBirthInRange(Date fechaI, Date fechaF) {
+		return repositorio.findByFechaNacimientoBetween(fechaI, fechaF);
 	}
 	
 	

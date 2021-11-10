@@ -34,13 +34,19 @@ public class SpringDesafiojpaApplication implements CommandLineRunner {
 		
 		String nombre = "María";
 		String apellidos = "Pérez";
-		System.out.println("Buscar por nombre "+nombre+" y apellidos "+apellidos+":");
+		System.out.println("\nBuscar por nombre "+nombre+" y apellidos "+apellidos+":");
 		List<Cliente> filtroNombre = clienteServicio.findByCompleteName(nombre, apellidos);
 		for (Cliente cliente : filtroNombre) {
 			System.out.println(cliente);
 		}
 		
-		System.out.println("Buscar todos los clientes:");
+		System.out.println("\nFiltrar por fecha en rango:");
+		Date fechaI = Date.valueOf("1990-01-01");
+		Date fechaF = Date.valueOf("2000-12-31");
+		List<Cliente> filtroPorFecha = clienteServicio.findByBirthInRange(fechaI, fechaF);
+		System.out.println("Clientes nacidos entre 1990 y 2000:\n"+filtroPorFecha);
+		
+		System.out.println("\nBuscar todos los clientes:");
 		List<Cliente> listadoClientes = clienteServicio.getClientes();
 		System.out.println(listadoClientes);
 		

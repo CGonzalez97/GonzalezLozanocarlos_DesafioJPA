@@ -1,5 +1,6 @@
 package com.bootcamp.springdesafiojpa.services;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,5 +21,7 @@ public interface ClienteServiceI {
 	Optional<Cliente> addCliente(Cliente cliente);
 	
 	List<Cliente> findByCompleteName(String nombre, String apellidos);
+	
+	List<Cliente> findByBirthInRange(Date fechaI, Date fechaF);
 
 }
