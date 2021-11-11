@@ -60,6 +60,11 @@ public class ClienteServiceImpl implements ClienteServiceI{
 	public List<Cliente> findByBirthInRange(Date fechaI, Date fechaF) {
 		return repositorio.findByFechaNacimientoBetween(fechaI, fechaF);
 	}
+
+	@Override
+	public List<Cliente> findByName(String nombre) {
+		return repositorio.findByNombre(nombre);
+	}
 	
 	
 

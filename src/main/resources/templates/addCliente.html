@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="UTF-8">
+
+</head>
+<body>
+
+	<a th:href="@{/}">Index</a>
+	<a th:href="@{/clientes}">Listar clientes</a>
+	
+	<form th:action="@{/clientes/add}" th:object="${newCliente}" th:method="POST">
+	
+		Nombre: <input type="text" th:field="${newCliente.nombre}" placeholder="Nombre" /><br />
+		Apellidos: <input type="text" th:field="${newCliente.apellidos}" placeholder="Apellidos" /><br />
+		Fecha de Nacimiento: <input type="date" th:field="${newCliente.fechaNacimiento}" placeholder="'Fecha de Nacimiento'" /><br />
+		NSS: <input type="text" th:field="${newCliente.nSeguridadSocial}" placeholder="'Número de la seguridad social'" /><br />
+		<button type="submit">Añadir</button><br />
+	
+	</form>
+
+</body>
+</html>

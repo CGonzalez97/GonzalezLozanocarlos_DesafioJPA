@@ -32,6 +32,7 @@ public class SpringDesafiojpaApplication implements CommandLineRunner {
 		clienteServicio.addCliente(cliente2);
 		clienteServicio.addCliente(cliente3);
 		
+		/*
 		String nombre = "María";
 		String apellidos = "Pérez";
 		System.out.println("\nBuscar por nombre "+nombre+" y apellidos "+apellidos+":");
@@ -69,7 +70,7 @@ public class SpringDesafiojpaApplication implements CommandLineRunner {
 		clienteServicio.deleteCliente(listadoClientes.get(0));
 		listadoClientes = clienteServicio.getClientes();
 		System.out.println("Comprobación:\n"+listadoClientes);
-		
+		*/
 		
 				
 		

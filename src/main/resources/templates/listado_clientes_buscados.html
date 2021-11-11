@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="UTF-8">
+	
+</head>
+<body>
+
+	<a th:href="@{/}">Index</a><br />
+	<a th:href="@{/clientes/add}">Añadir clientes</a><br />
+	
+	<table>
+		<tr>
+		    <th>Nombre</th>
+		    <th>Fecha nacimiento</th>
+		    <th>NSS</th>
+	  	</tr>
+		<tr th:each="cliente : ${clientes}">
+		    <td th:text="${cliente.nombre}+' '+${cliente.apellidos}">Nombre</td>
+		    <td th:text="${#dates.format(cliente.fechaNacimiento, 'dd/MMM/yyyy')}">Fecha nacimiento</td>
+		    <td th:text="${cliente.nSeguridadSocial}">NSS</td>
+		    <td><form th:object="${cliente}" th:action="@{/clientes/{id}(id=${cliente.id})}" th:method="POST"><button type="submit">Eliminar</button></form></td>
+	  </tr>
+	</table>
+	
+	
+
+</body>
+</html>

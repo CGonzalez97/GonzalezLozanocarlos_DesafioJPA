@@ -22,6 +22,8 @@ public interface ClienteServiceI {
 	
 	List<Cliente> findByCompleteName(String nombre, String apellidos);
 	
+	List<Cliente> findByName(String nombre);
+	
 	List<Cliente> findByBirthInRange(Date fechaI, Date fechaF);
 
 }

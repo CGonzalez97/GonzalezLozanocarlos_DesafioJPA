@@ -9,7 +9,9 @@ import com.bootcamp.springdesafiojpa.models.Cliente;
 
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 	
-	List<Cliente> findByNombreAndApellidos(String nombre, String apellidos);
+	List<Cliente> findByNombreAndApellidos(String nombre, String apellidos);	
+	
+	List<Cliente> findByNombre(String nombre);
 	
 	List<Cliente> findByFechaNacimientoBetween(Date fechaI, Date fechaF);
 

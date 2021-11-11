@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="UTF-8">
+	
+</head>
+<body>
+
+	<a th:href="@{/}">Index</a><br />
+	<a th:href="@{/clientes}">Listar clientes</a>
+	<a th:href="@{/clientes/add}">Añadir clientes</a><br />
+	
+	<table>
+		<tr>
+		    <th>Nombre</th>
+		    <th>Fecha nacimiento</th>
+		    <th>NSS</th>
+	  	</tr>
+		<tr th:each="cliente : ${listado}">
+		    <td th:text="${cliente.nombre}+' '+${cliente.apellidos}">Nombre</td>
+		    <td th:text="${#dates.format(cliente.fechaNacimiento, 'dd/MMM/yyyy')}">Fecha nacimiento</td>
+		    <td th:text="${cliente.nSeguridadSocial}">NSS</td>
+		    <td>
+		    	<form th:name="formDrop" th:id="formDrop" th:object="${cliente}" th:action="@{/clientes/{id}(id=${cliente.id})}" th:method="POST">
+		    		<button type="submit" form="formDrop">Eliminar</button>
+	    		</form>
+    		</td>
+	  </tr>
+	</table>
+
+  	<form th:name="formSearch" th:id="formSearch" th:action="@{/clientes/search}" th:method="POST" ><!-- th:object="${nombre}" -->
+		<input form="formSearch" name="nombre" type="text" placeholder="'Usuario a buscar'"/><br /><!--  th:field="${nombre}" -->
+		<button form="formSearch" type="submit">Buscar</button><br />
+	</form>
+
+</body>
+</html>
